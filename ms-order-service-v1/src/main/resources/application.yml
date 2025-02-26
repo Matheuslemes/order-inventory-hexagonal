@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orders_db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    sql:
+      init:
+        mode: always
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      group-id: order-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: '*'
+        spring.json.value.default.type: com.sysmapproject.ms_order_service_v1.core.domain.dto.OrderEventDTO
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    listener:
+      missing-topics-fatal: false
+
+    topics:
+      producer-topic: tpc-order-events
+      consumer-topic: tpc-inventory-validated
