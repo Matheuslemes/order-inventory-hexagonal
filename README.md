@@ -69,6 +69,9 @@ This microservices-based solution ensures seamless order processing, efficient i
 ## Service Communication Diagram
 ![comunicação](https://github.com/user-attachments/assets/26e61326-774b-4bee-a71e-51b9cc2ca4c4)
 
+## Project Wiki
+
+For complete documentation of the Order & Inventory Microservices, including architecture, endpoints, system workflows, testing strategy, and deployment instructions, visit our Project Wiki. This wiki serves as a comprehensive guide to understanding the microservices structure, event-driven communication, and best practices adopted in this project
 
 ## Author & Contact Information
 
