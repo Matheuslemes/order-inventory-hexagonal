@@ -61,13 +61,13 @@ Below is an overview of how the system processes orders and manages inventory.
 This microservices-based solution ensures seamless order processing, efficient inventory tracking, and fault tolerance for better scalability and system reliability. 
 
 ## Application Structure Diagram
-![estrutura](https://github.com/user-attachments/assets/9443b53b-d817-403a-a19d-8de539e18a80)
+![image](https://github.com/user-attachments/assets/0ee65439-d0ba-4558-a41e-e071c0a91033)
 
 ## Processing Flow Diagram
-![fluxo-geral](https://github.com/user-attachments/assets/ed6ffb9e-77dc-4104-be4b-34c7d1079596)
+![image](https://github.com/user-attachments/assets/ddcbe27d-915d-4bf1-8b14-2682aa49dd19)
 
 ## Service Communication Diagram
-![comunicação](https://github.com/user-attachments/assets/26e61326-774b-4bee-a71e-51b9cc2ca4c4)
+![image](https://github.com/user-attachments/assets/c3c39f3e-52ba-4b54-86f1-fd2f75ce0765)
 
 ## Project Wiki
 
