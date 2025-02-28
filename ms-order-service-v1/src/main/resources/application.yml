@@ -5,6 +5,15 @@ spring:
   application:
     name: order-service
 
+  springdoc:
+    api-docs:
+      enabled: true
+    swagger-ui:
+      path: /swagger-ui.html
+      operationsSorter: method
+      tagsSorter: alpha
+
+
   datasource:
     url: jdbc:postgresql://localhost:5432/orders_db
     username: postgres

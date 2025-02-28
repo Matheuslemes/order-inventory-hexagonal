@@ -2,6 +2,8 @@ package com.sysmapproject.ms_order_service_v1.api.rest.controller;
 
 import com.sysmapproject.ms_order_service_v1.core.domain.entity.Order;
 import com.sysmapproject.ms_order_service_v1.core.port.in.OrderPortIn;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,11 +16,13 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/v1/orders")
 @RequiredArgsConstructor
+@Tag(name = "Order Management", description = "Endpoints for managing orders")
 public class OrderController {
 
     private final OrderPortIn orderService;
 
     @PostMapping
+    @Operation(summary = "Create a new order", description = "Create an order and triggers stock validation")
     public ResponseEntity<Order> createOrder(@Valid @RequestBody Order order) {
         try {
             log.info("Attempting to create a new order for customerId: {}", order.getCustomerId());
@@ -35,6 +39,7 @@ public class OrderController {
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Update an order", description = "Update an orders existing order details")
     public ResponseEntity<Order> updateOrder(@PathVariable UUID id, @Valid @RequestBody Order order) {
         try {
             log.info("Attempting to update order with ID: {}", id);
@@ -52,6 +57,7 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Get an order by ID", description = "Fetch an order by its unique ID")
     public ResponseEntity<Order> getOrderById(@PathVariable UUID id) {
         try {
             log.info("Fetching order with ID: {}", id);
@@ -65,6 +71,7 @@ public class OrderController {
     }
 
     @GetMapping
+    @Operation(summary = "List all orders", description = "Fetch all orders from the system")
     public ResponseEntity<List<Order>> getAllOrders() {
         try {
             log.info("Fetching all orders");
@@ -78,6 +85,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Delete an order", description = "Delete an order from the system")
     public ResponseEntity<Void> deleteOrderById(@PathVariable UUID id) {
         try {
             log.info("Attempting to delete order with ID: {}", id);

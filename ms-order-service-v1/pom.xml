@@ -14,7 +14,7 @@
 	<artifactId>ms-order-service-v1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ms-order-service-v1</name>
-	<description>Micro serviço de Pedidos</description>
+	<description>Order Micro Service</description>
 
 	<properties>
 		<java.version>17</java.version>
@@ -66,6 +66,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
 		</dependency>
 
 	</dependencies>

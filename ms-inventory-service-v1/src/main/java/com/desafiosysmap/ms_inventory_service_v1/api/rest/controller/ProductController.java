@@ -2,6 +2,8 @@ package com.desafiosysmap.ms_inventory_service_v1.api.rest.controller;
 
 import com.desafiosysmap.ms_inventory_service_v1.core.domain.entity.Product;
 import com.desafiosysmap.ms_inventory_service_v1.core.port.in.ProductPortIn;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +16,13 @@ import java.util.UUID;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/products")
+@Tag(name = "Product Management", description = "Endpoints for managing products in inventory")
 public class ProductController {
 
     private final ProductPortIn productService;
 
     @PostMapping
+    @Operation(summary = "Create a new product", description = "Create a new product in the inventory")
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
 
         log.info("Received request to create product: {}", product);
@@ -34,6 +38,7 @@ public class ProductController {
     }
 
     @GetMapping
+    @Operation(summary = "List all products", description = "Retrieve a list of all products in the inventory")
     public ResponseEntity<List<Product>> listProducts() {
 
         log.info("Received request to list all products");
@@ -48,6 +53,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Get product by ID", description = "Retrieve a product by its ID")
     public ResponseEntity<Product> getProductById(@PathVariable UUID id) {
 
         log.info("Received request to fetch product with ID: {}", id);
@@ -65,6 +71,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
+    @Operation(summary = "Update a product", description = "Update an existing product in the inventory")
     public ResponseEntity<Product> updateProduct(@PathVariable UUID id, @RequestBody Product product) {
 
         log.info("Received request to update product with ID: {}", id);
@@ -83,6 +90,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Delete a product", description = "Delete a product from the inventory")
     public ResponseEntity<Void> deleteProduct(@PathVariable UUID id) {
 
         log.info("Received request to delete product with ID: {}", id);
