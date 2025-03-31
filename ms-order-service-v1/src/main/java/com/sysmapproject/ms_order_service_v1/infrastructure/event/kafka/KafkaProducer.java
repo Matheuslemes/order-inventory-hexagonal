@@ -23,7 +23,7 @@ public class KafkaProducer {
                     if (ex != null) {
                         log.error("Failed to send order: {}", ex.getMessage());
                     } else {
-                        log.info("Order with ID: {} sent successfully to Kafka topic {}", orderEventDTO.getOrderId(), topicName);
+                        log.info("Order with ID: {} sent successfully to Kafka topic: {}", orderEventDTO.getOrderId(), topicName);
                     }
                 });
     }

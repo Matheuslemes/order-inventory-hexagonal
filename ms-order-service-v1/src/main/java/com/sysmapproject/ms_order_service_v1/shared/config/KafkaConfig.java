@@ -79,7 +79,7 @@ public class KafkaConfig {
         DefaultErrorHandler errorHandler = new DefaultErrorHandler(recoverer, new FixedBackOff(1000L, 3));
 
         errorHandler.setRetryListeners((record, ex, deliveryAttempt) -> {
-            System.err.println("Falha ao processar mensagem. Tentativa: " + deliveryAttempt + ", Erro: " + ex.getMessage());
+            System.err.println("Falid to process message. Attempt: " + deliveryAttempt + ", Error: " + ex.getMessage());
         });
 
         factory.setCommonErrorHandler(errorHandler);

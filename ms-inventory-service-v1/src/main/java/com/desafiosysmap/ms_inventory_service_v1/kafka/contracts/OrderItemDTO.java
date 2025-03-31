@@ -15,6 +15,4 @@ public class OrderItemDTO {
 
     private Integer quantity;
 
-    public OrderItemDTO(UUID validProductId, int quantity) {
-    }
 }
