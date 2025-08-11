@@ -76,6 +76,7 @@ For complete documentation of the Order & Inventory Microservices, including arc
 ## Author & Contact Information
 
 Author: Matheus Silva Lemes
+
 Email: matheuslemesmsl@gmail.com
 
 LinkedIn: https://www.linkedin.com/in/matheus-silva-lemes-8a4628178/
